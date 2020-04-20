@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CityInfo.API.Contexts;
 using CityInfo.API.Sevices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CityInfo
@@ -22,6 +24,11 @@ namespace CityInfo
 #else
             services.AddTransient<IMailService, CloudMailService>();
 #endif
+            string connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=CifyInfoDB;Trusted_Connection=True;";
+            services.AddDbContext<CityInfoContext>(o =>
+            {
+                o.UseSqlServer(connectionString);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
