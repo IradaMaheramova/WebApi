@@ -43,7 +43,16 @@ namespace CityInfo.API
                 {
                     Id = 2,
                     Name = "Antwerp",
-                    Description = "Belgium"
+                    Description = "Belgium",
+                     PointsOfInterest =  new List<PointsOfInterestDto>()
+                    {
+                        new PointsOfInterestDto()
+                        {
+                            Id = 1,
+                            Name = "Cathedral",
+                            Description = "Interesting"
+                        }
+                    }
                 }
             };
         }

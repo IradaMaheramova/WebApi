@@ -32,7 +32,7 @@ namespace CityInfo.API.Contexts
                 {
                     Id = 2,
                     Name = "Antwerp",
-                    Description = "The one with the cathedral that was never really finished."
+                    Description = "The one with the cathedral."
                 },
                 new City()
                 {
