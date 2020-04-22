@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CityInfo.API.Migrations
 {
     [DbContext(typeof(CityInfoContext))]
-    [Migration("20200420111339_SeedDB")]
-    partial class SeedDB
+    [Migration("20200421123607_DataSeed")]
+    partial class DataSeed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,7 +27,7 @@ namespace CityInfo.API.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
-                        .HasMaxLength(50);
+                        .HasMaxLength(200);
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -39,7 +39,7 @@ namespace CityInfo.API.Migrations
 
                     b.HasData(
                         new { Id = 1, Description = "The one with that big park.", Name = "New York City" },
-                        new { Id = 2, Description = "The one with the cathedral that was never really finished.", Name = "Antwerp" },
+                        new { Id = 2, Description = "The one with the cathedral.", Name = "Antwerp" },
                         new { Id = 3, Description = "The one with that big tower.", Name = "Paris" }
                     );
                 });
